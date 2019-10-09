@@ -7,17 +7,8 @@ pipeline {
       }
     }
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            bat 'mvn build'
-          }
-        }
-        stage('Maven') {
-          steps {
-            bat 'mvn build'
-          }
-        }
+      steps {
+        bat 'mvn compile'
       }
     }
   }
